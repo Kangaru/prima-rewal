@@ -22,6 +22,18 @@ end
 
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails', require: false
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'launchy'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'simplecov', require: false
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
