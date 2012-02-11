@@ -5,8 +5,17 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Gems for db
 gem 'sqlite3'
 
+# Gems for authorization/authentication
+gem 'devise'
+gem 'cancan'
+
+# Misc
+gem 'haml'
+gem 'param_protected'
+gem 'polish'
 
 # Gems used only for assets and not required
 # in production environments by default.
