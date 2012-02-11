@@ -1,5 +1,5 @@
 PrimaRewal::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: Routes::DeviseControllers.to_hash
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
