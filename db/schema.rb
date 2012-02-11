@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211115402) do
+ActiveRecord::Schema.define(:version => 20120211143909) do
+
+  create_table "flatpage_translations", :force => true do |t|
+    t.integer  "flatpage_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "flatpage_translations", ["flatpage_id"], :name => "index_flatpage_translations_on_flatpage_id"
+
+  create_table "flatpages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
