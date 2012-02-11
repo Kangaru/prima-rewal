@@ -16,6 +16,7 @@ gem 'cancan'
 gem 'haml'
 gem 'param_protected'
 gem 'polish'
+gem 'globalize3'
 
 # Gems used only for assets and not required
 # in production environments by default.
