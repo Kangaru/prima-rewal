@@ -1,5 +1,8 @@
 PrimaRewal::Application.routes.draw do
-  devise_for :users, controllers: Routes::DeviseControllers.to_hash
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  root to: 'admin/dashboard#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
