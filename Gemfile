@@ -8,9 +8,12 @@ gem 'rails', '3.2.1'
 # Gems for db
 gem 'sqlite3'
 
-# Gems for authorization/authentication
+# Authorization
 gem 'devise'
-gem 'cancan'
+
+# ActiveAdmin & additional gems
+gem 'activeadmin'
+gem "meta_search", "~> 1.1.3"
 
 # Misc
 gem 'haml'
