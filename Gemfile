@@ -16,7 +16,7 @@ gem 'cancan'
 gem 'haml'
 gem 'param_protected'
 gem 'polish'
-gem 'globalize3'
+gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
