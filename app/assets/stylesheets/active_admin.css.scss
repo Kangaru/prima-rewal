@@ -1,6 +1,43 @@
 // Active Admin CSS Styles
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import 'jquery-ui/jquery-ui-custom';
 
 // To customize the Active Admin interfaces, add your
 // styles here:
+li.hidden {
+  display: none;
+}
+
+
+/*******************************************************************************
+* Language Tabs
+*
+*******************************************************************************/
+.ui-widget-content {
+  border: none;
+}
+.ui-widget-header {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  background: none;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  border: 1px solid #ccc;
+}
+.ui-tabs {
+  padding: 0;
+}
+.ui-tabs .ui-tabs-panel {
+  padding: 0;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl, {
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
