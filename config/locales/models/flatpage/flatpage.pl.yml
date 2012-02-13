@@ -1,0 +1,9 @@
+pl:
+  flatpage: &flatpage
+    title: Tytuł
+    content: Treść
+
+  activerecord:
+    attributes:
+      flatpage:
+        <<: *flatpage
