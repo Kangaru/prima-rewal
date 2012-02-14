@@ -6,15 +6,10 @@ class Presenters::Base
 
 
 private
+  named_accessor :template, as: :h
 
   def self.presents(name)
-    define_method name do
-      @object
-    end
-  end
-
-  def h
-    @template
+    named_accessor :object, as: name
   end
 
   def method_missing(*args, &block)
