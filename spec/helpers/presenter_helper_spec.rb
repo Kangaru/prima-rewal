@@ -13,10 +13,6 @@ class OtherPresenter < StringPresenter
 end
 
 describe PresenterHelper do
-  it 'should recognize presenter class' do
-    helper.send(:recognize_presenter_klass, 'foobar').should == StringPresenter
-  end
-
   it 'should call default presenter if presenter class is not given' do
     helper.present('foobar') do |p|
       p.foobar
