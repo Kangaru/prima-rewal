@@ -3,6 +3,11 @@ ActiveAdmin.register Flatpage do
 
   controller do
     helper :locale
+
+    protected
+    def paginate(chain)
+      super(chain).includes(:translations)
+    end
   end
 
 
