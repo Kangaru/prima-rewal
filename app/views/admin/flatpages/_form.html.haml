@@ -1,18 +1,18 @@
-= @flatpage.errors.inspect
+- present @flatpage do |p|
 
-= semantic_form_for [:admin, @flatpage] do |f|
-  .language-tabs
-    %ul.language-selection
+  = semantic_form_for [:admin, @flatpage] do |f|
+    .language-tabs
+      %ul.language-selection
+        - for_locales do |locale, lang|
+          = p.admin_form_tab(locale, lang)
+
       - for_locales do |locale, lang|
-        %li= link_to lang, "#lang-#{locale}"
+        %div{id: "lang-#{locale}"}
+          = f.inputs lang do
+            = p.localized_title_input locale, form: f
+            = p.localized_content_input locale, form: f
 
-    - for_locales do |locale, lang|
-      %div{id: "lang-#{locale}"}
-        = f.inputs lang do
-          = f.input :"title_#{locale}", label: t('flatpage.title')
-          = f.input :"content_#{locale}", as: :text, label: t('flatpage.content')
-
-  = f.buttons
+    = f.buttons
 
 :javascript
   $('.language-tabs').tabs();
