@@ -48,6 +48,8 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
 
+    config.include ActionView::TestCase::Behavior, example_group: { file_path: %r{spec/presenters} }
+
     config.before :suite do
       DatabaseCleaner.strategy = :deletion
     end
