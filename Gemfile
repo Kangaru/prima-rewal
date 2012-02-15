@@ -22,6 +22,8 @@ gem 'polish'
 gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git'
 gem 'easy_globalize3_accessors'
 
+gem 'named_accessors'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

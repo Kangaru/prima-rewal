@@ -6,10 +6,10 @@ class Presenters::Base
 
 
 private
-  named_accessor :template, as: :h
+  named_reader :template, as: :h
 
   def self.presents(name)
-    named_accessor :object, as: name
+    named_reader :object, as: name
   end
 
   def method_missing(*args, &block)
