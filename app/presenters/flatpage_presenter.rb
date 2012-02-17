@@ -1,9 +1,5 @@
-class FlatpagePresenter < Presenters::Base
+class FlatpagePresenter < ActionPresenter::Base
   presents :flatpage
-
-  def created_at
-    l flatpage.created_at
-  end
 
   def titles(joiner='/')
     flatpage.translations.map(&:title) * joiner

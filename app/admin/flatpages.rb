@@ -2,7 +2,7 @@ ActiveAdmin.register Flatpage do
   config.clear_sidebar_sections!
 
   controller do
-    helper :locale, :presenter
+    helper :locale
 
     protected
     def paginate(chain)
