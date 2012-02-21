@@ -45,12 +45,12 @@ describe 'Admin::Flatpages' do
     end
 
     it 'should create new flatpage' do
-      Language.all.each do |locale, _|
-        expected = flatpage(locale)
+      Language.available_locales.each do |locale|
+        flatpage = flatpage locale
 
         within "div#lang-#{locale}" do
-          fill_in "flatpage_title_#{locale}", with: expected.title
-          fill_in "flatpage_content_#{locale}", with: expected.content
+          fill_in "Title", with: flatpage.title
+          fill_in "Content", with: flatpage.content
         end
       end
 
@@ -59,8 +59,32 @@ describe 'Admin::Flatpages' do
 
       current_path.should == admin_flatpage_path(flatpage)
 
-      Language.all.each do |locale, _|
+      Language.available_locales.each do |locale|
         flatpage.send(:"title_#{locale}").should == "Lorem ipsum #{locale}"
+      end
+    end
+  end
+
+  context '#edit & #update' do
+    let(:flatpage) { Factory :flatpage }
+    before { visit edit_admin_flatpage_path flatpage }
+
+    it 'should update flatpage' do
+      Language.available_locales.each_with_index do |locale|
+        within "div#lang-#{locale}" do
+          fill_in "Title", with: "New title #{locale}"
+          fill_in "Content", with: "New content #{locale}"
+        end
+      end
+
+      click_button 'Update Flatpage'
+      flatpage = Flatpage.first
+
+      current_path.should == admin_flatpage_path(flatpage)
+
+      Language.available_locales.each do |locale|
+        flatpage.send(:"title_#{locale}").should == "New title #{locale}"
+        flatpage.send(:"content_#{locale}").should == "New content #{locale}"
       end
     end
   end

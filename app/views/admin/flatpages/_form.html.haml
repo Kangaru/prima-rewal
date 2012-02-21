@@ -6,11 +6,12 @@
         - for_locales do |locale, lang|
           = p.admin_form_tab(locale, lang)
 
-      - for_locales do |locale, lang|
-        %div{id: "lang-#{locale}"}
-          = f.inputs lang do
-            = p.localized_title_input locale, form: f
-            = p.localized_content_input locale, form: f
+      = f.semantic_fields_for :translations do |tf|
+        %div{:id => "lang-#{tf.object.locale}"}
+          = tf.inputs "&nbsp;" do
+            = tf.input :title
+            = tf.input :content, as: :text
+            = tf.input :locale, as: :hidden
 
     = f.buttons
 
