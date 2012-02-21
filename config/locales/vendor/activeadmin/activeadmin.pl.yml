@@ -1,0 +1,45 @@
+pl:
+  active_admin:
+    dashboard: Pulpit
+    dashboard_welcome:
+      welcome: "Witaj w ActiveAdmin. To jest domyślny pulpit."
+      call_to_action: "Aby dodać sekcję do pulpitu sprawdź 'app/admin/dashboards.rb'"
+    view: Podgląd
+    edit: Edytuj
+    delete: Usuń
+    delete_confirmation: Czy jesteś pewien, że chcesz to usunąć?
+    new_model: Dodaj
+    create_model: Dodaj
+    edit_model: Edytuj
+    update_model: Edytuj
+    delete_model: Usuń
+    details: Detale
+    cancel: Anuluj
+    empty: Pusty
+    previous: Poprzedni
+    next: Następny
+    download: 'Pobierz:'
+    has_many_new: Dodaj nowy
+    has_many_delete: Usuń
+    filter: Filtruj
+    clear_filters: Wyczyść filtry
+    search_field: "%{field}"
+    equal_to: Równy
+    greater_than: Większy niż
+    less_than: Mniejszy niż
+    main_content: "Zaimplementuj %{model}#main_content aby wyświetlić treść"
+    logout: Wyloguj się
+    sidebars:
+      filters: Filtry
+    pagination:
+      empty: "Nie znaleziono %{model}"
+      one: "Wyświetlanie <b>1</b> %{model}"
+      one_page: "Wyświetlanie <b>wszystkich %{n}</b> %{model}"
+      multiple: "Wyświetlanie %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> z <b>%{total}</b>"
+      entry:
+        one: "pozycja"
+        other: "pozycje"
+    any: "Jakikolwiek"
+    blank_slate:
+      content: "Nie ma jeszcze zasobu %{resource_name}."
+      link: "Utwórz go"
