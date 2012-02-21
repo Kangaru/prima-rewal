@@ -51,6 +51,7 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
 
     config.include ActionView::TestCase::Behavior, example_group: { file_path: %r{spec/presenters} }
+    config.include Devise::TestHelpers, type: :controller
 
     config.before :suite do
       DatabaseCleaner.strategy = :deletion
