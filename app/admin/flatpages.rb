@@ -1,6 +1,7 @@
 ActiveAdmin.register Flatpage do
   config.clear_sidebar_sections!
   config.paginate = false
+  config.sort_order = 'position_asc'
 
   controller do
     helper :locale
@@ -8,6 +9,13 @@ ActiveAdmin.register Flatpage do
     def scoped_collection
       end_of_association_chain.includes(:translations)
     end
+  end
+
+  collection_action :sort, method: :put do
+    params[:ids].each_with_index do |id, index|
+      Flatpage.update(id, position: index.to_i + 1)
+    end
+    head 200
   end
 
 
