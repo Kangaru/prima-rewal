@@ -12,7 +12,6 @@ describe 'Admin::Flatpages' do
 
       within 'table#flatpages' do
         page.should have_content flatpage.title
-        page.should have_content I18n.l flatpage.created_at
       end
     end
 
