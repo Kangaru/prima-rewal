@@ -30,4 +30,14 @@ describe FlatpagePresenter do
 
     presenter.admin_form_tab(:pl, 'Polish').should == expected
   end
+
+  it 'should return span with titles to be sortable' do
+    flatpage.should_receive(:id).and_return 1
+    presenter.should_receive(:titles)
+
+    sortable_titles = presenter.sortable_titles
+
+    sortable_titles.should include 'data-id="1"'
+    sortable_titles.should include 'class="sortable_title"'
+  end
 end

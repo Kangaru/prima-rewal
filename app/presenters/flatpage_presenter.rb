@@ -5,6 +5,10 @@ class FlatpagePresenter < ActionPresenter::Base
     flatpage.translations.map(&:title) * joiner
   end
 
+  def sortable_titles
+    content_tag :span, titles, data: { id: flatpage.id }, class: :sortable_title
+  end
+
   def translated_to(joiner='/')
     flatpage.translations.map(&:locale).map {|locale| Language.translate_locale locale } * joiner
   end
