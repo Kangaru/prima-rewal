@@ -1,12 +1,12 @@
 ActiveAdmin.register Flatpage do
   config.clear_sidebar_sections!
+  config.paginate = false
 
   controller do
     helper :locale
 
-    protected
-    def paginate(chain)
-      super(chain).includes(:translations)
+    def scoped_collection
+      end_of_association_chain.includes(:translations)
     end
   end
 
