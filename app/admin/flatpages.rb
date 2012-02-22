@@ -13,15 +13,7 @@ ActiveAdmin.register Flatpage do
 
   index do
     column :title, sortable: false do |flatpage|
-      present(flatpage) {|p| p.titles}
-    end
-
-    column :locales, sortable: false do |flatpage|
-      present(flatpage) {|p| p.translated_to }
-    end
-
-    column :created_at do |flatpage|
-      present(flatpage) {|p| p.created_at }
+      present(flatpage) {|p| p.sortable_titles }
     end
 
     default_actions
