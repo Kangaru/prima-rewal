@@ -30,22 +30,4 @@ describe FlatpagePresenter do
 
     presenter.admin_form_tab(:pl, 'Polish').should == expected
   end
-
-  context '#form' do
-    let(:form) { mock(Object) }
-    let(:input) { '<input id="flatpage_title_pl" name="flatpage[title_pl]" type="text"/>' }
-    let(:textarea) { '<textarea id="flatpage_content_en" name="flatpage[content_en]" rows="20"></textarea>' }
-
-    it 'should return localized title input' do
-      form.should_receive(:input).with(:title_pl, {label: I18n.t('flatpage.title')}).and_return(input)
-
-      presenter.localized_title_input(:pl, form: form).should == input
-    end
-
-    it 'should return localized content textarea' do
-      form.should_receive(:input).with(:content_en, {as: :text, label: I18n.t('flatpage.content')}).and_return(textarea)
-
-      presenter.localized_content_input(:en, form: form).should == textarea
-    end
-  end
 end
