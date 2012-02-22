@@ -1,20 +1,24 @@
 $(document).ready(function() {
 
   if($('table#flatpages').length == 1) {
-    var sortable_table = $('table#flatpages tbody');
-    var sortable_title = $('table#flatpages tbody .sortable_title');
+    /* some helper function */
 
-    function serializeFlatpageIds() {
+    var serializeFlatpageIds = function() {
       var flatpageIds = $.makeArray(
-        sortable_title.map(function(){
+        $('.sortable_title').map(function(){
           return $(this).data('id');
         })
       );
 
       return { ids: flatpageIds };
-    }
+    };
+
 
     var fixWidthHelper = function(e, ui) {
+      var title_td = $('.sortable_title').parent();
+      title_td.width(countMaxWidth(title_td));
+
+
       ui.children().each(function() {
         $(this).width($(this).width());
       });
@@ -22,24 +26,41 @@ $(document).ready(function() {
       return ui;
     };
 
+    var fixTableZebraStyle = function() {
+      $('tr').removeClass('odd even');
+      $('tr:nth-child(even)').addClass('even');
+      $('tr:nth-child(odd)').addClass('odd');
+    };
+
+    var countMaxWidth = function(element) {
+      var widths = element.map(function() {
+        return $(this).width()
+      });
+
+      return Math.max.apply(Math, widths);
+    };
 
 
-    sortable_table.sortable({
-      distance: 15,
+    /* jqueyr-ui sortable on flatpages table */
+
+    $('table#flatpages tbody').sortable({
       axis: 'y',
       helper: fixWidthHelper,
+      containment: 'parent',
+      handle: $('.sortable_title').parent(),
 
-      update: function() {
+
+      update: function(e, ui) {
+        fixTableZebraStyle();
+
         $.ajax({
           url: '/admin/flatpages/sort',
           type: 'put',
-          data: serializeFlatpageIds(),
-          complete: function(){
-            sortable_title.parent().effect('highlight');
-          }
+          data: serializeFlatpageIds()
         })
       }
     });
+
   }
 
 });
