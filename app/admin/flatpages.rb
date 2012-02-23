@@ -1,27 +1,27 @@
 ActiveAdmin.register Flatpage do
   config.clear_sidebar_sections!
+  config.paginate = false
+  config.sort_order = 'position_asc'
 
   controller do
     helper :locale
 
-    protected
-    def paginate(chain)
-      super(chain).includes(:translations)
+    def scoped_collection
+      end_of_association_chain.tap do |chain|
+        return chain.includes(:translations) if chain.present?
+      end
     end
+  end
+
+  collection_action :sort, method: :put do
+    Flatpage.update_positions params[:ids]
+    head 200
   end
 
 
   index do
     column :title, sortable: false do |flatpage|
-      present(flatpage) {|p| p.titles}
-    end
-
-    column :locales, sortable: false do |flatpage|
-      present(flatpage) {|p| p.translated_to }
-    end
-
-    column :created_at do |flatpage|
-      present(flatpage) {|p| p.created_at }
+      present(flatpage) {|p| p.sortable_titles }
     end
 
     default_actions
