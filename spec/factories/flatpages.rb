@@ -10,5 +10,7 @@ FactoryGirl.define do
 
     title_de de.title
     content_de de.content
+
+    position 1
   end
 end
