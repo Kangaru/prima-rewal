@@ -7,10 +7,9 @@ ActiveAdmin.register Flatpage do
     helper :locale
 
     def scoped_collection
-      collection = end_of_association_chain
-
-      return collection.includes(:translations) if collection.present?
-      collection
+      end_of_association_chain.tap do |chain|
+        return chain.includes(:translations) if chain.present?
+      end
     end
   end
 
