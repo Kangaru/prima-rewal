@@ -12,4 +12,17 @@ class Flatpage < ActiveRecord::Base
       end
     end
   end
+
+  def self.update_positions(ids)
+    ids.each_with_index do |id, index|
+      update_position id, index.to_i + 1
+    end
+  end
+
+
+private
+
+  def self.update_position(id, pos)
+    where('id == ? AND position != ?', id, pos).limit(1).update_all position: pos
+  end
 end
