@@ -1,12 +1,8 @@
 require 'spec_helper'
 
 describe Admin::AccountsController do
-  let(:user) { mock_model(User) }
-
-  before do
-    controller.should_receive(:current_user).and_return user
-    controller.should_receive(:authenticate_user!).and_return true
-  end
+  let(:user) { Factory :user }
+  before { sign_in user }
 
   context '#index & #show' do
     after do
