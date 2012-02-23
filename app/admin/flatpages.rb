@@ -15,9 +15,7 @@ ActiveAdmin.register Flatpage do
   end
 
   collection_action :sort, method: :put do
-    params[:ids].each_with_index do |id, index|
-      Flatpage.update(id, position: index.to_i + 1)
-    end
+    Flatpage.update_positions params[:ids]
     head 200
   end
 
