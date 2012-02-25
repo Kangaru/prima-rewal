@@ -75,47 +75,14 @@
         <div class="box-shadowed">
           <h4>Booking</h4>
           <div class="box-inner">
-            <form class="form-vertical">
-              <fieldset>
-                <div class="control-group">
-                  <label class="control-label" for="input01">Name, surname</label>
-                  <div class="controls">
-                    <input type="text" class="input-medium" id="input01">
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="control-label" for="input02">Phone number</label>
-                  <div class="controls">
-                    <input type="text" class="input-medium" id="input02">
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="control-label" for="input03">E-mail address</label>
-                  <div class="controls">
-                    <input type="text" class="input-medium" id="input03">
-                  </div>
-                </div>
-                <div class="control-group">
-                  <div class="controls">
-                    <label class="control-label" for="input01">People</label>
-                    <select class="span1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="control-label" for="input04">Notes</label>
-                  <div class="controls">
-                    <input type="text" class="input-medium" id="input04">
-                  </div>
-                </div>
-                <button class="btn btn-large btn-primary btn-info">Book!</button>
-              </fieldset>
-            </form>
+            <%= simple_form_for :reservation do |f| %>
+              <%= f.input :full_name, label: 'Name, surname', input_html: { class: 'input-medium' } %>
+              <%= f.input :phone_number, label: 'Phone number', input_html: { class: 'input-medium' } %>
+              <%= f.input :email, label: 'E-mail', input_html: { class: 'input-medium' } %>
+              <%= f.input :people, collection: 1..5, prompt: false, input_html: { class: 'input-medium' } %>
+              <%= f.input :notes, as: :text, input_html: { rows: 3 } %>
+              <%= f.button :submit, 'Book!', class: %w{btn-large btn-primary btn-info} %>
+            <% end %>
           </div>
         </div>
       </div>
