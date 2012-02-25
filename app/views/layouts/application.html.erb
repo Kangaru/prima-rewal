@@ -1,14 +1,134 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>PrimaRewal</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Prima Rewal</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<%= yield %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-</body>
+    <!-- Le styles -->
+    <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
+
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="container">
+        <a class="brand" href="#">Prima Rewal</a>
+        <div class="right-side">
+          <div class="language-choose">
+            <a href="#"><%= image_tag 'locales/pl.png' %></a>
+            <a href="#"><%= image_tag 'locales/en.png' %></a>
+            <a href="#"><%= image_tag 'locales/de.png' %></a>
+          </div>
+          <ul class="menu-list">
+            <li class="active"><a href="#">Welcome</a></li>
+            <li><a href="#">Offer</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Location</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">Pictures</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container main-section">
+      <div class="col540">
+        <div id="myCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= image_tag 'slider/pic.png' %>
+            </div>
+            <div class="item">
+              <%= image_tag 'slider/pic2.png' %>
+            </div>
+          </div>
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+        <%= yield %>
+        <h2>Welcome to the <span>Prima Family</span> Apartments.</h2>
+        <p>We are delighted to offer you the most beautiful Polish Baltic coast with its pure water and sandy beaches. Our attractive apartments are set in ecologically clean little town Rewal on the north-west coast of Poland, where thousands of tourists arrive every year.</p>
+
+        <p>We offer our guests to stay in a newly build family resort, which is located far from the noisy centre, among the picturesque hundred-year-old oaks, close to the cliff’s beach.</p>
+
+        <p>The Prima Family Apartments are independent, fully equipped and double floor suites. Each 4-6 person apartment has its own spacious patio with garden furniture.</p>
+
+        <p>Fenced off, free car parking, spacious grill place and playground for kids await for you at the Prima.</p>
+
+        <p>Upon arriving at our retreat place you will quickly enjoy a memorable stay with us.</p>
+      </div>
+      <div class="col220">
+        <div class="box-shadowed">
+          <h4>Booking</h4>
+          <div class="box-inner">
+            <form class="form-vertical">
+              <fieldset>
+                <div class="control-group">
+                  <label class="control-label" for="input01">Name, surname</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="input01">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input02">Phone number</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="input02">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input03">E-mail address</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="input03">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <label class="control-label" for="input01">People</label>
+                    <select class="span1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input04">Notes</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="input04">
+                  </div>
+                </div>
+                <button class="btn btn-large btn-primary btn-info">Book!</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Copyright &copy; Prima 2012. All rights reserved.</p>
+        <h2>W Rewalu jest Prima!</h2>
+      </div>
+    </footer>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
