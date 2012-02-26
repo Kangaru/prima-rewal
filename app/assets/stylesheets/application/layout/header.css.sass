@@ -1,0 +1,66 @@
+.header-container
+  @include container-padding
+
+  height: 150px
+  background: url('layout/header.png') center center
+
+
+.brand
+  display: block
+  float: left
+  width: 150px
+  height: 150px
+  background: url('layout/logo.png') center center no-repeat
+  text-indent: -9000px
+
+
+.right-side
+  float: left
+  width: 630
+
+
+.language-choose
+  @include header-box-background
+  @include rounded-corners(0, 0, 3px, 3px)
+  @include header-box-shadow
+
+  height: 26px
+  width: 80px
+  padding: 5px 10px
+  margin-left: 590px
+
+
+.menu-list
+  $menu-height: 48px
+
+  @include header-box-background
+  @include rounded-corners(3px, 3px, 3px, 3px)
+  @include header-box-shadow
+
+  height: $menu-height
+  list-style: none
+  display: block
+  float: right
+  margin-top: 45px
+
+  li
+    @include hover-active
+
+    display: block
+    float: left
+    border-right: 1px solid #c5c5c5
+    font-size: 11px
+    font-weight: bold
+
+    a
+      display: block
+      height: $menu-height
+      line-height: $menu-height
+      padding: 0 20px
+      color: #585858
+
+    &:first-child
+      @include rounded-corners(3px, 0, 0, 3px)
+
+    &:last-child
+      @include rounded-corners(0, 3px, 3px, 0)

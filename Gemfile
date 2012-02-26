@@ -22,6 +22,7 @@ gem 'polish'
 gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git'
 gem 'easy_globalize3_accessors'
 gem 'acts_as_list'
+gem 'simple_form'
 
 gem 'named_accessors'
 gem 'action_presenter'
@@ -30,6 +31,7 @@ gem 'action_presenter'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'less-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -39,6 +41,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 
 group :development, :test do

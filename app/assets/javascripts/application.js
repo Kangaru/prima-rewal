@@ -1,4 +1,5 @@
 //= require jquery
 //= require jquery_ujs
 //
-//= require active_admin
+//= require twitter/bootstrap
+//= require bootstrap
