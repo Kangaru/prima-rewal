@@ -72,16 +72,16 @@
         <p>Upon arriving at our retreat place you will quickly enjoy a memorable stay with us.</p>
       </div>
       <div class="col220">
-        <div class="box-shadowed">
+        <div class='box-shadowed'>
           <h4>Booking</h4>
-          <div class="box-inner">
-            <%= simple_form_for :reservation do |f| %>
-              <%= f.input :full_name, label: 'Name, surname', input_html: { class: 'input-medium' } %>
-              <%= f.input :phone_number, label: 'Phone number', input_html: { class: 'input-medium' } %>
-              <%= f.input :email, label: 'E-mail', input_html: { class: 'input-medium' } %>
-              <%= f.input :people, collection: 1..5, prompt: false, input_html: { class: 'input-medium' } %>
-              <%= f.input :notes, as: :text, input_html: { rows: 3 } %>
-              <%= f.button :submit, 'Book!', class: %w{btn-large btn-primary btn-info} %>
+          <div class='box-inner'>
+            <%= reservation_form :reservation do |f| %>
+              <%= f.input :full_name %>
+              <%= f.input :phone_number %>
+              <%= f.input :email %>
+              <%= f.input :people, collection: 1..5, prompt: false %>
+              <%= f.input :notes, as: :text %>
+              <%= f.button :submit, 'Book!' %>
             <% end %>
           </div>
         </div>
