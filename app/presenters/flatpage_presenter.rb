@@ -1,20 +1,17 @@
 class FlatpagePresenter < ActionPresenter::Base
+  include Presenters::Markdown
+  include Presenters::Let
+
   presents :flatpage
+  delegate :title, to: :flatpage
 
-  def titles(joiner='/')
-    flatpage.translations.map(&:title) * joiner
-  end
 
-  def sortable_titles
-    content_tag :span, titles, data: { id: flatpage.id }, class: :sortable_title
-  end
+  let(:titles) {|joiner='/'| flatpage.translations.map(&:title) * joiner }
+  let(:sortable_titles) { content_tag :span, titles, data: { id: flatpage.id }, class: :sortable_title  }
 
-  def translated_to(joiner='/')
-    flatpage.translations.map(&:locale).map {|locale| Language.translate_locale locale } * joiner
-  end
+  let(:content) { markdown flatpage.content }
 
-  def admin_form_tab(locale, lang)
-    link = link_to lang, "#lang-#{locale}"
-    content_tag :li, link
-  end
+  let(:translated_to) {|joiner='/'| flatpage.translations.map(&:locale).map {|locale| Language.translate_locale locale } * joiner }
+
+  let(:admin_form_tab) {|locale, lang| content_tag :li, link_to(lang, "#lang-#{locale}") }
 end
