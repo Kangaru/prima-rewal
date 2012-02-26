@@ -33,4 +33,15 @@ describe Flatpage do
       flatpage.class.send(:update_position, 2, 1)
     end
   end
+
+  context "#for_main_page" do
+    it 'should return flatpage for main page' do
+      flatpage = mock_model Flatpage
+
+      Flatpage.should_receive(:order).with('position ASC').and_return flatpage
+      flatpage.should_receive(:first).and_return flatpage
+
+      Flatpage.for_main_page
+    end
+  end
 end

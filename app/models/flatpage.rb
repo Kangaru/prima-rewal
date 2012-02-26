@@ -5,6 +5,10 @@ class Flatpage < ActiveRecord::Base
 
   after_initialize :setup_translations
 
+  def self.for_main_page
+    @main_page ||= order('position ASC').first
+  end
+
   def setup_translations
     if new_record? && translations.empty?
       Language.available_locales.each do |locale|
