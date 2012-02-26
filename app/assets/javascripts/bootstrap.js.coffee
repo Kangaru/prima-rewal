@@ -12,7 +12,3 @@ jQuery ->
   $(".tooltip").tooltip()
   $(".typeahead").typeahead()
   $("a[rel=tooltip]").tooltip()
-
-
-  # carousel
-  $('#myCarousel').carousel()
