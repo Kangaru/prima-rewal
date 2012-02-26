@@ -23,6 +23,7 @@ gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git'
 gem 'easy_globalize3_accessors'
 gem 'acts_as_list'
 gem 'simple_form'
+gem 'redcarpet'
 
 gem 'named_accessors'
 gem 'action_presenter'
