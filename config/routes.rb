@@ -2,7 +2,9 @@ PrimaRewal::Application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root to: 'admin/dashboard#index'
+  resources :flatpages, only: [:show]
+
+  root to: 'flatpages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
