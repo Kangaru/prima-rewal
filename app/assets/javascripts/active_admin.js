@@ -1,2 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+//
 //= require active_admin/base
-//= require admin/flatpages/sortable
+//
+//= require active_admin/flatpages/sortable
