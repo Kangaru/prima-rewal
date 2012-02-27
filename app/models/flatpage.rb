@@ -1,4 +1,6 @@
 class Flatpage < ActiveRecord::Base
+  acts_as_list
+
   translates :title, :content
   globalize_accessors
   accepts_nested_attributes_for :translations
