@@ -1,6 +1,5 @@
 class FlatpagePresenter < ActionPresenter::Base
   include Presenters::Markdown
-  include Presenters::Let
 
   presents :flatpage
   delegate :title, to: :flatpage
