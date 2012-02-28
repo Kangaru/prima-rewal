@@ -15,13 +15,15 @@ ActiveAdmin.register User do
     default_actions
   end
 
-  form do |f|
-    f.inputs do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
-    end
+  form partial: 'form'
 
-    f.buttons
-  end
+  #form do |f|
+  #  f.inputs do
+  #    f.input :email
+  #    f.input :password
+  #    f.input :password_confirmation
+  #  end
+  #
+  #  f.buttons
+  #end
 end

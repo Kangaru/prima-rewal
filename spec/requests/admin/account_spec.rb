@@ -9,10 +9,10 @@ describe 'Admin::AcccountsController' do
 
     new_email, new_password = 'my@email.com', 'password'
 
-    within 'form#edit_account' do
-      fill_in 'account_email', with: new_email
-      fill_in 'account_password', with: new_password
-      fill_in 'account_password_confirmation', with: new_password
+    within "form#edit_user_#{user.id}" do
+      fill_in 'user_email', with: new_email
+      fill_in 'user_password', with: new_password
+      fill_in 'user_password_confirmation', with: new_password
 
       click_button 'Update User'
     end
