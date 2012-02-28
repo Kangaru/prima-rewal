@@ -8,7 +8,7 @@ class Flatpage < ActiveRecord::Base
   after_initialize :setup_translations
 
   def self.for_main_page
-    @main_page ||= order('position ASC').first
+    order('position ASC').first
   end
 
   def setup_translations
