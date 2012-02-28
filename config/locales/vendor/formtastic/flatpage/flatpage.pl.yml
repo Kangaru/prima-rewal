@@ -1,0 +1,12 @@
+pl:
+  formtastic:
+    labels:
+      flatpage:
+        title: Tytuł
+        content: Treść
+    hints:
+      flatpage:
+        title: 'Dla tytułu "Witaj świecie!" adres będzie wygladał - "witaj-swiecie"'
+    placeholders:
+      flatpage:
+        title: Adres strony oraz nazwa w menu

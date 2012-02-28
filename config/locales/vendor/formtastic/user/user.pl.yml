@@ -5,13 +5,11 @@ pl:
       password: Hasło
       password_confirmation: Potwierdzenie hasła
     hints:
-      password_confirmation: Podaj to samo hasło które wpisałeś w polu powyżej
-
-      account:
-        password: Podaj obecne hasło jeżeli nie chcesz zmieniać
+      user:
+        password_confirmation: Podaj to samo hasło które wpisałeś w polu powyżej
+        edit:
+          password: Podaj obecne hasło jeżeli nie chcesz zmieniać
 
     placeholders:
-      email: Podaj adres e-mail (potrzebny do logowania)
-
       account:
         password: Podaj nowe hasło
