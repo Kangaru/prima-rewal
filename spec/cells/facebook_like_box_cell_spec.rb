@@ -7,7 +7,7 @@ describe FacebookLikeBoxCell do
       subject { render_cell(:facebook_like_box, :display) }
 
       it { should have_selector 'div.box-shadowed #fb-root' }
-      it { should have_selector 'div.box-shadowed .fb-like-box' }
+      it { should have_selector 'div.box-shadowed .box-inner .fb-like-box' }
       it { should have_selector 'div.fb-like-box[data-href="http://facebook.com/primarewal"]' }
     end
     
