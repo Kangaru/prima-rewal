@@ -1,0 +1,4 @@
+.box-shadowed
+  #fb-root
+  .box-inner
+    = content_tag :div, '', class: 'fb-like-box', data: { href: @options.href, width: @options.width, height: @options.height, 'show-faces' => @options.faces, stream: @options.stream, header: @options.header, 'border-color' => @options.color }
