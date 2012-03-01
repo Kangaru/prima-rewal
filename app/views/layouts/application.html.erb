@@ -39,19 +39,7 @@
     </div>
     <div class="container main-section">
       <div class="col540">
-        <div id="myCarousel" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="item active">
-              <%= image_tag 'slider/pic.png' %>
-            </div>
-            <div class="item">
-              <%= image_tag 'slider/pic2.png' %>
-            </div>
-          </div>
-          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-        </div>
-          <article><%= yield %></article>
+        <article><%= yield %></article>
       </div>
       <div class="col220">
         <%= render_cell :facebook_like_box, :display %>
