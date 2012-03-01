@@ -25,6 +25,10 @@ gem 'acts_as_list'
 gem 'simple_form'
 gem 'redcarpet'
 
+# Widgets/Cells
+gem 'apotomo'
+gem 'cells'
+
 gem 'named_accessors'
 gem 'action_presenter'
 
@@ -55,6 +59,9 @@ group :development, :test do
   gem 'launchy'
   gem 'spork', '~> 0.9.0.rc'
   gem 'simplecov', require: false
+
+  gem 'rspec-cells'
+  gem 'rspec-apotomo'
 end
 
 # To use ActiveModel has_secure_password
