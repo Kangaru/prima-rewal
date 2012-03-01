@@ -44,4 +44,15 @@ describe Flatpage do
       Flatpage.for_main_page
     end
   end
+
+  context "#for_menu" do
+    it 'should return sorted flatpages for menu' do
+      flatpage = mock_model Flatpage
+
+      Flatpage.should_receive(:order).with('position ASC').and_return flatpage
+      flatpage.should_receive(:includes).with(:translations)
+
+      Flatpage.for_menu
+    end
+  end
 end
