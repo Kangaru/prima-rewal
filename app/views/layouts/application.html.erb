@@ -33,16 +33,7 @@
             <a href="#"><%= image_tag 'locales/en.png' %></a>
             <a href="#"><%= image_tag 'locales/de.png' %></a>
           </div>
-          <nav>
-            <ul class="menu-list">
-              <li class="active"><a href="#">Welcome</a></li>
-              <li><a href="#">Offer</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Location</a></li>
-              <li><a href="#">Booking</a></li>
-              <li><a href="#">Pictures</a></li>
-            </ul>
-          </nav>
+          <%= render_cell :menu, :display %>
         </div>
       </div>
     </div>

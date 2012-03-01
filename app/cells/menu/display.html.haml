@@ -1,0 +1,5 @@
+%nav
+  %ul.menu-list
+    = menu_link @main_page, root_path
+    - @flatpages.each_with_index do |flatpage|
+      = menu_link flatpage, flatpage_path(flatpage)

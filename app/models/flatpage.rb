@@ -8,7 +8,11 @@ class Flatpage < ActiveRecord::Base
   after_initialize :setup_translations
 
   def self.for_main_page
-    order('position ASC').first
+    order_by_position.first
+  end
+
+  def self.for_menu
+    order_by_position.includes(:translations)
   end
 
   def setup_translations
@@ -27,6 +31,10 @@ class Flatpage < ActiveRecord::Base
 
 
 private
+
+  def self.order_by_position(order = 'ASC')
+    order("position #{order}")
+  end
 
   def self.update_position(id, pos)
     where('id == ? AND position != ?', id, pos).limit(1).update_all position: pos
