@@ -1,5 +1,5 @@
 class Widget
-  @widgets = { carousel: :cell }
+  @widgets = { carousel: :cell, google_maps: :cell }
 
   def initialize(content, context)
     @content, @context = content, context
