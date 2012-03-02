@@ -2,9 +2,12 @@ PrimaRewal::Application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :flatpages, only: [:show]
+  scope "(:locale)/", :locale => /#{I18n.available_locales.join '|'}/ do
+    resources :flatpages, only: [:show]
+  end
 
-  root to: 'flatpages#index'
+  match '(:locale)' => 'flatpages#index', as: :root
+  #root to: 'flatpages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
