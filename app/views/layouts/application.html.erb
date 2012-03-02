@@ -28,11 +28,7 @@
       <div class="container">
         <a class="brand" href="#">Prima Rewal</a>
         <div class="right-side">
-          <div class="language-choose">
-            <a href="#"><%= image_tag 'locales/pl.png' %></a>
-            <a href="#"><%= image_tag 'locales/en.png' %></a>
-            <a href="#"><%= image_tag 'locales/de.png' %></a>
-          </div>
+          <%= render_cell :language_choose, :display %>
           <%= render_cell :menu, :display %>
         </div>
       </div>
