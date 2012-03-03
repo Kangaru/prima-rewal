@@ -24,6 +24,7 @@ gem 'easy_globalize3_accessors'
 gem 'acts_as_list'
 gem 'simple_form'
 gem 'redcarpet'
+gem 'i18n_routing'
 
 # Widgets/Cells
 gem 'apotomo'
