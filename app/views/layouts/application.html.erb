@@ -26,7 +26,7 @@
   <body>
     <div class="header-container">
       <div class="container">
-        <a class="brand" href="#">Prima Rewal</a>
+        <%= link_to 'Prima Rewal', main_page_path, class: :brand %>
         <div class="right-side">
           <%= render_cell :language_choose, :display %>
           <%= render_cell :menu, :display %>
