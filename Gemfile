@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -38,13 +38,13 @@ gem 'action_presenter'
 # in production environments by default.
 group :assets do
   gem 'less-rails'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.4'
+  gem 'coffee-rails', '~> 3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 1.2.3'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -58,7 +58,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'
-  gem 'spork', '~> 0.9.0.rc'
+  gem 'spork', '~> 1.0.0rc2'
   gem 'simplecov', require: false
 
   gem 'rspec-cells'
