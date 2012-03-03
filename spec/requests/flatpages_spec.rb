@@ -15,7 +15,7 @@ describe 'FlatpagesController' do
 
   context "#show" do
     let!(:flatpage) { Factory :flatpage }
-    before { visit flatpage_path flatpage.id }
+    before { visit flatpage_path flatpage }
 
     it "should show flatpage" do
       within 'article' do

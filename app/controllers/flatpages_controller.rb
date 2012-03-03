@@ -1,4 +1,6 @@
 class FlatpagesController < ApplicationController
+  include LocalizedController
+
   def index
     @flatpage = Flatpage.for_main_page
     render :show
