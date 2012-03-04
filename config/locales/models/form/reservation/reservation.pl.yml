@@ -1,0 +1,12 @@
+pl:
+  form/reservation: &reservation
+    full_name: Imię i nazwisko
+    phone_number: Numer telefonu
+    email: Adres E-mail
+    people: Liczba osób
+    notes: Uwagi
+
+  activemodel:
+    attributes:
+      form/reservation:
+        <<: *reservation
