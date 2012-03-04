@@ -25,6 +25,7 @@ gem 'acts_as_list'
 gem 'simple_form'
 gem 'redcarpet'
 gem 'i18n_routing'
+gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git'
 
 # Widgets/Cells
 gem 'apotomo'
