@@ -1,0 +1,16 @@
+<div class="modal" id="reservation-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h2><%= t('reservation.modal.title') %></h2>
+  </div>
+  <div class="modal-body">
+    <p><%= t('reservation.modal.content', full_name: @reservation.full_name).html_safe %></p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-info" data-dismiss="modal"><%= t('reservation.modal.close') %></a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.modal').modal()
+</script>
