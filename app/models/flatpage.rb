@@ -29,6 +29,10 @@ class Flatpage < ActiveRecord::Base
     end
   end
 
+  def to_param
+    [id, title.to_url].join '-'
+  end
+
 
 private
 
