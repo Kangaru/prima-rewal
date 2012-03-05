@@ -1,16 +1,11 @@
-<div class="modal" id="reservation-modal">
-  <div class="modal-header">
-    <a class="close" data-dismiss="modal">×</a>
-    <h2><%= t('reservation.modal.title') %></h2>
-  </div>
-  <div class="modal-body">
-    <p><%= t('reservation.modal.content', full_name: @reservation.full_name).html_safe %></p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn btn-info" data-dismiss="modal"><%= t('reservation.modal.close') %></a>
-  </div>
-</div>
+#reservation-modal.modal
+  .modal-header
+    %a.close{data: { dismiss: :modal }} ×
+    %h2= t('reservation.modal.title')
+  .modal-body
+    = t('reservation.modal.content', full_name: @reservation.full_name).html_safe
+  .modal-footer
+    %a.btn.btn-info{data: {dismiss: :modal}}= t('reservation.modal.close')
 
-<script type="text/javascript">
+:javascript
   $('.modal').modal()
-</script>

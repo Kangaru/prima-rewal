@@ -1,0 +1,12 @@
+= widget_div do
+  .box-shadowed
+    %h4 Booking
+    .box-inner
+      = reservation_form @reservation, as: :reservation, url: url_for_event(:submit), remote: true do |f|
+        = f.input :full_name
+        = f.input :phone_number
+        = f.input :email
+        = f.input :people, collection: 1..6, prompt: false
+        = f.input :notes, as: :text
+
+        = f.button :submit, 'Book!'
