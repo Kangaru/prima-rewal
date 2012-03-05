@@ -1,5 +1,5 @@
 countMinimalValue = (array) ->
-  array.reduce (x,y) -> Math.min x,y
+  array.reduce (x,y) -> Math.max x,y
 
 fixSizeHelper = (images) ->
   sizes = images.map ->
@@ -15,7 +15,7 @@ fixSizeHelper = (images) ->
 
 jQuery ->
   if $('#fbgallery').length > 0
-    fixSizeHelper($("#fbgallery .span2 img"))
+    fixSizeHelper($(".span2 a[rel='fbgallery'] img"))
 
     $('#fbgallery a').fancybox
       prevEffect: 'none'

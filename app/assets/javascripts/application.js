@@ -2,8 +2,7 @@
 //= require jquery_ujs
 //= require fancybox
 //
-//= require twitter/bootstrap
 //= require bootstrap
+//= require bootstrap_overrides
 //
-//= require application/facebook/like_box
-//= require application/facebook/images
+//= require application/cells

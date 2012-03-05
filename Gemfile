@@ -27,6 +27,7 @@ gem 'redcarpet'
 gem 'i18n_routing'
 gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git'
 gem 'fb_graph'
+gem 'stringex'
 
 # Widgets/Cells
 gem 'apotomo'
@@ -49,7 +50,8 @@ group :assets do
   gem 'uglifier', '>= 1.2.3'
 end
 
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
+
 gem 'jquery-rails'
 gem 'fancybox-rails', git: 'git://github.com/sverigemeny/fancybox-rails.git'
 
