@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+require 'libv8'
 
 gem 'rails', '3.2.2'
 
