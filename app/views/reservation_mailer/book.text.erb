@@ -1,0 +1,8 @@
+Rezerwacja
+=========
+
+Imię, naziwsko: <%= @reservation.full_name %>
+Numer telefonu: <%= @reservation.phone_number %>
+Adres e-mail: <%= @reservation.email %>
+Liczba osób: <%= @reservation.people %>
+Uwagi: <%= @reservation.notes.presence || 'Brak' %>
