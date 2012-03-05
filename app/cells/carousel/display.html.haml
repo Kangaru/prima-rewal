@@ -1,8 +1,9 @@
 #myCarousel.carousel.slide
   .carousel-inner
     .item.active
-      = image_tag 'slider/pic.png'
-    .item
-      = image_tag 'slider/pic2.png'
+      = image_tag @cover.source
+    - @photos.each do |photo|
+      .item
+        = image_tag photo.source
   = link_to "&lsaquo;".html_safe, '#myCarousel', data: { slide: :prev }, class: 'carousel-control left'
   = link_to "&rsaquo;".html_safe, '#myCarousel', data: { slide: :next }, class: 'carousel-control right'
