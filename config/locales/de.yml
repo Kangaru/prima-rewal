@@ -3,9 +3,3 @@ de:
     pl: Polski
     en: Angielski
     de: Niemiecki
-
-  reservation:
-    modal:
-      title: Vielen Dank für Ihre Reservierung!
-      content: '<h3>Rserviert für: %{full_name}.</h3><p>Bitte, vergessen Sie nicht, dass es nur eine <b>einleitende</b> Reservierung ist.<br/>Bestätigen Sie es bitte bei E-mail oder Telefon nach ein paar Tage.</p>'
-      close: 'Schließen'

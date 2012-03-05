@@ -3,9 +3,3 @@ pl:
     pl: Polski
     en: Angielski
     de: Niemiecki
-
-  reservation:
-    modal:
-      title: Dziękujemy za rezerwacje!
-      content: '<h3>Rezerwacja na nazwisko: %{full_name}.</h3><p>Proszę pamiętać że jest to <b>wstępna</b> rezerwacja.<br/>Prosimy o telefoniczne lub mailowe potwierdzenie w ciągu kilku najbliższych dni.</p>'
-      close: 'Zamknij'

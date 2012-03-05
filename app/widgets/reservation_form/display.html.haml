@@ -1,6 +1,6 @@
 = widget_div do
   .box-shadowed
-    %h4 Booking
+    %h4= t('reservation.header')
     .box-inner
       = reservation_form @reservation, as: :reservation, url: url_for_event(:submit), remote: true do |f|
         = f.input :full_name
@@ -9,4 +9,4 @@
         = f.input :people, collection: 1..6, prompt: false
         = f.input :notes, as: :text
 
-        = f.button :submit, 'Book!'
+        = f.button :submit
