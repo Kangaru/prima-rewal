@@ -54,9 +54,9 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.2.3'
-end
 
-gem 'bootstrap-sass'
+  gem 'bootstrap-sass'
+end
 
 gem 'jquery-rails'
 gem 'fancybox-rails', git: 'git://github.com/sverigemeny/fancybox-rails.git'
