@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'redcarpet'
 gem 'i18n_routing'
 gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git'
+gem 'fb_graph'
 
 # Widgets/Cells
 gem 'apotomo'
@@ -50,6 +51,7 @@ end
 
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
+gem 'fancybox-rails', git: 'git://github.com/sverigemeny/fancybox-rails.git'
 
 group :development, :test do
   gem 'rspec-rails'
