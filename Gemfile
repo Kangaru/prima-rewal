@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'redcarpet'
 gem 'i18n_routing'
 gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git'
+gem 'fb_graph'
 
 # Widgets/Cells
 gem 'apotomo'
