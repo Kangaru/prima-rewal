@@ -31,3 +31,4 @@
 
 # Ignore coverage (simplecov) files
 /coverage/
+config/database.yml
