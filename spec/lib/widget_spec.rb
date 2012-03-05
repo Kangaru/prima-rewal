@@ -17,7 +17,7 @@ describe Widget do
 
   context "#instance_variables" do
     it 'should get class accessor #widgets and pass to instance accessor' do
-      widgets = { carousel: :cell, googlemaps: :widget }
+      widgets = [:carousel, :googlemap]
 
       Widget.should_receive(:widgets).and_return widgets
 
@@ -31,18 +31,18 @@ describe Widget do
     let(:klass) { subject.class }
 
     it 'should yield block for every matching widget' do
-      subject.stub(:widgets).and_return({ fblikebox: :cell })
+      subject.stub(:widgets).and_return([:fblikebox])
       subject.context.should_receive(:render_cell).with(:fblikebox, :display).and_return 'I rendered cell!1'
 
-      subject.send(:matching) do |type, name|
-        subject.context.send(type, name, :display)
+      subject.send(:matching) do |name|
+        subject.context.render_cell name, :display
       end.should == 'Lorem ipsum I rendered cell!1, dolor.'
     end
 
     it 'should do nothing if match non existing widget' do
-      subject.stub(:widgets).and_return({ contact: :widget })
+      subject.stub(:widgets).and_return([:contact])
 
-      subject.send(:matching) do |type, name|
+      subject.send(:matching) do |name|
       end.should == 'Lorem ipsum fblikebox, dolor.'
     end
   end
@@ -51,8 +51,8 @@ describe Widget do
     subject { Widget.new 'Lorem ipsum [[ carousel ]], dolor.', mock(Object) }
 
     it 'should send message to view context' do
-      subject.stub(:widgets).and_return({carousel: :widget})
-      subject.context.should_receive(:render_widget).with(:carousel, :display).and_return 'I am widget'
+      subject.stub(:widgets).and_return([:carousel])
+      subject.context.should_receive(:render_cell).with(:carousel, :display).and_return 'I am widget'
 
       content = subject.widgetize
 

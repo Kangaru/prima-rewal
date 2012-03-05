@@ -1,5 +1,5 @@
 class Widget
-  @widgets = { carousel: :cell, google_maps: :cell, facebook_gallery: :cell }
+  @widgets = [:carousel, :google_maps, :facebook_gallery]
 
   def initialize(content, context)
     @content, @context = content, context
@@ -13,8 +13,8 @@ class Widget
 
 
   def widgetize
-    matching do |type, name|
-      context.send(type, name, :display)
+    matching do |name|
+      context.render_cell name, :display
     end
   end
 
@@ -22,10 +22,8 @@ class Widget
 private
 
   def matching
-    content.gsub /#{widgets.keys * '|'}(?=\ \]\])/ do |widget|
-      name = widget.to_sym
-      type = "render_#{widgets[name]}".to_sym
-      yield(type, name) if block_given?
+    content.gsub /#{widgets * '|'}(?=\ \]\])/ do |widget|
+      yield(widget.to_sym) if block_given?
     end.gsub(/\[{2} | \]{2}/, '')
   end
 end
