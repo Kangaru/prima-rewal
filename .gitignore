@@ -24,7 +24,7 @@
 /.rvmrc
 
 # Ignore Gemfile.lock file
-/Gemfile.lock
+# /Gemfile.lock
 
 # Ignore folder setting files
 /.DS_Store
