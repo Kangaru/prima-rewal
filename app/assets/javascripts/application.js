@@ -6,3 +6,4 @@
 //= require bootstrap
 //
 //= require application/facebook/like_box
+//= require application/facebook/images
