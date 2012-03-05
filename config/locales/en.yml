@@ -6,3 +6,9 @@ en:
     pl: Polish
     en: English
     de: German
+
+  reservation:
+    modal:
+      title: Thank you for the reservation!
+      content: '<h3>Reservation in name of: %{full_name}.</h3><p>Please, remember that it is <b>initial</b> reservation.<br/>Please call or email us within few days to confirm it.</p>'
+      close: 'Close'

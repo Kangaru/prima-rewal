@@ -1,0 +1,11 @@
+#reservation-modal.modal
+  .modal-header
+    %a.close{data: { dismiss: :modal }} ×
+    %h2= t('reservation.modal.title')
+  .modal-body
+    = t('reservation.modal.content', full_name: @reservation.full_name).html_safe
+  .modal-footer
+    %a.btn.btn-info{data: {dismiss: :modal}}= t('reservation.modal.close')
+
+:javascript
+  $('.modal').modal()
