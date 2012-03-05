@@ -51,6 +51,7 @@ end
 
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
+gem 'fancybox-rails', git: 'git://github.com/sverigemeny/fancybox-rails.git'
 
 group :development, :test do
   gem 'rspec-rails'
