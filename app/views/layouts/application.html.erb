@@ -39,19 +39,7 @@
       </div>
       <div class="col220">
         <%= render_cell :facebook_like_box, :display %>
-        <div class='box-shadowed'>
-          <h4>Booking</h4>
-          <div class='box-inner'>
-            <%= reservation_form :reservation do |f| %>
-              <%= f.input :full_name %>
-              <%= f.input :phone_number %>
-              <%= f.input :email %>
-              <%= f.input :people, collection: 1..5, prompt: false %>
-              <%= f.input :notes, as: :text %>
-              <%= f.button :submit, 'Book!' %>
-            <% end %>
-          </div>
-        </div>
+        <%= render_widget :reservation_form, :display %>
       </div>
     </div>
 
@@ -61,7 +49,7 @@
         <h2>W Rewalu jest Prima!</h2>
       </div>
     </footer>
-    
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
