@@ -8,7 +8,7 @@ set :user,      'prima'
 set :scm,        'git'
 set :scm_user,   'zlw'
 set :repository, 'git://github.com/Kangaru/prima-rewal.git'
-set :branch,     'capistrano'
+set :branch,     'master'
 
 
 role :web, 'prima.megiteam.pl'                # Your HTTP server, Apache/etc
