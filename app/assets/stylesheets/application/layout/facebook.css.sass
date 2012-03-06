@@ -1,5 +1,21 @@
-#fbgallery ul.thumbnails
-  margin-left: 0
+@mixin thumbnail-size($width, $height)
+  a
+    max-width: $width
+    max-height: $height
+
+    img
+      max-width: $width
+      height: $height
+
+#fbgallery
+  ul.thumbnails
+    margin-left: 0
+
+    .span6
+      @include thumbnail-size(450px, 337px)
+
+    .span2
+      @include thumbnail-size(130px, 97px)
 
 .carousel img
   max-width: 540px
