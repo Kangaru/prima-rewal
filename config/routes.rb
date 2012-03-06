@@ -2,8 +2,10 @@ PrimaRewal::Application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  resource :locale, only: [:update]
+
   localized I18n.available_locales, verbose: true do
-    scope ':i18n_locale', constraints: { i18n_locale: /#{I18n.available_locales.join('|')}/ } do
+    scope '(:i18n_locale)', constraints: { i18n_locale: /#{I18n.available_locales.join('|')}/ } do
       resources :flatpages, only: [:show]
     end
   end
