@@ -9,6 +9,10 @@ class DummyController
     {}
   end
 
+  def params
+    {i18n_locale: I18n.locale}
+  end
+
   include LocalizedController
 end
 
