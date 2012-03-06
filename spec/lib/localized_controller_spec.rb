@@ -5,6 +5,10 @@ class DummyController
     nil
   end
 
+  def cookies
+    {}
+  end
+
   include LocalizedController
 end
 
