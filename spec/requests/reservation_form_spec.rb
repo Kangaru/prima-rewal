@@ -15,7 +15,7 @@ describe 'ReservationForm::Widget' do
       fill_in 'reservation_email', with: 'email@mail.com'
       fill_in 'reservation_notes', with: 'Lorem ipsum.'
 
-      click_button 'Book!'
+      click_button 'Book'
     end
 
 
@@ -24,7 +24,7 @@ describe 'ReservationForm::Widget' do
   end
 
   it 'should not send email and show validation errors' do
-    click_button 'Book!'
+    click_button 'Book'
 
     page.should have_content "First name and surnamecan\\'t be blank"
     page.should have_content "Phone numbercan\\'t be blank"
