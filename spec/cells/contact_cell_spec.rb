@@ -5,9 +5,6 @@ describe ContactCell do
     
     context "rendering display" do
       subject { render_cell(:contact, :display) }
-  
-      it { should have_selector("h1", :content => "Contact#display") }
-      it { should have_selector("p", :content => "Find me in app/cells/contact/display.html") }
     end
     
   end

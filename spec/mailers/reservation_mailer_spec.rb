@@ -1,6 +1,6 @@
 require "spec_helper"
 
-attrs = { full_name: 'John Doe', phone_number: '+41 33 323 302 392', email: 'mail@mail.com', people: 1, notes: '' }
+attrs = { full_name: 'John Doe', phone_number: '+41 33 323 302 392', email: 'mail@mail.com', date_of_arrival: Date.new(2010, 10, 10), date_of_departure: Date.new(2010, 10, 12), people: 1, notes: '' }
 
 describe ReservationMailer do
   describe "book" do
