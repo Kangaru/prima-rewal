@@ -23,7 +23,7 @@ private
 
   def matching
     content.gsub /#{widgets * '|'}(?=\ \]\])/ do |widget|
-      yield(widget.to_sym) if block_given?
+      yield(widget.to_sym) if block_given? rescue nil
     end.gsub(/\[{2} | \]{2}/, '')
   end
 end
