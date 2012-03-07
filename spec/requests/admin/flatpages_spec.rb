@@ -14,18 +14,6 @@ describe 'Admin::Flatpages' do
         page.should have_content flatpage.title
       end
     end
-
-    it 'should render #show' do
-      visit admin_flatpage_path(flatpage)
-
-      within "div#attributes_table_flatpage_#{flatpage.id}" do
-        page.should have_content flatpage.title
-
-        Language.all.each do |locale, _|
-          page.should have_content flatpage.send(:"content_#{locale}")
-        end
-      end
-    end
   end
 
   context '#new & #create' do
@@ -56,7 +44,7 @@ describe 'Admin::Flatpages' do
       click_button 'Create Flatpage'
       flatpage =  Flatpage.first
 
-      current_path.should == admin_flatpage_path(flatpage)
+      current_path.should == admin_flatpages_path
 
       Language.available_locales.each do |locale|
         flatpage.send(:"title_#{locale}").should == "Lorem ipsum #{locale}"
@@ -79,7 +67,7 @@ describe 'Admin::Flatpages' do
       click_button 'Update Flatpage'
       flatpage = Flatpage.first
 
-      current_path.should == admin_flatpage_path(flatpage)
+      current_path.should == admin_flatpages_path
 
       Language.available_locales.each do |locale|
         flatpage.send(:"title_#{locale}").should == "New title #{locale}"

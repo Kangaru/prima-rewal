@@ -1,23 +1,11 @@
 ActiveAdmin.register Flatpage do
-  config.clear_sidebar_sections!
-  config.paginate = false
+  menu label: I18n.t('admin.resources.flatpage')
+
+  actions :index, :new, :create, :edit, :update, :destroy
+
   config.sort_order = 'position_asc'
-
-  controller do
-    helper :locale
-    cache_sweeper :flatpage_sweeper
-
-    def scoped_collection
-      end_of_association_chain.tap do |chain|
-        return chain.includes(:translations) if chain.present?
-      end
-    end
-  end
-
-  collection_action :sort, method: :put do
-    Flatpage.update_positions params[:ids]
-    head 200
-  end
+  config.paginate = false
+  config.clear_sidebar_sections!
 
 
   index do
@@ -30,18 +18,45 @@ ActiveAdmin.register Flatpage do
 
   form partial: 'form'
 
-  show do |flatpage|
-    attributes_table do
-      row :title do
-        present(flatpage) {|p| p.titles }
-      end
 
-      for_locales do |locale, _|
-        row :"content_#{locale}"
-      end
+  controller do
+    helper :locale
+    cache_sweeper :flatpage_sweeper
 
-      row :created_at
-      row :updated_at
+    def scoped_collection
+      end_of_association_chain.tap do |chain|
+        return chain.includes(:translations) if chain.present?
+      end
     end
   end
+
+
+  collection_action :sort, method: :put do
+    Flatpage.update_positions params[:ids]
+    head 200
+  end
+
+
+  #== Reset gallery cache
+  action_item only: :index do
+    link_to t('admin.flatpages.action_item.expire_gallery'), expire_gallery_admin_flatpages_path, method: :post
+  end
+
+  collection_action :expire_gallery, method: :post do
+    FacebookSweeper.expire_gallery_cache!
+    redirect_to :back, notice: t('admin.flatpages.expire_gallery.expired')
+  end
+  #== Reset gallery cache
+
+
+  #== Reset carousel cache
+  action_item only: :index do
+    link_to t('admin.flatpages.action_item.expire_carousel'), expire_carousel_admin_flatpages_path, method: :post
+  end
+
+  collection_action :expire_carousel, as: :expire_carousel, method: :post do
+    FacebookSweeper.expire_carousel_cache!
+    redirect_to :back, notice: t('admin.flatpages.expire_carousel.expired')
+  end
+  #== Reset carousel cache
 end
