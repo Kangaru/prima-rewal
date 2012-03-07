@@ -9,3 +9,6 @@
 
 :javascript
   $('.modal').modal()
+  $('#reservation-modal').on('hidden', function () {
+    $(this).remove()
+  })
