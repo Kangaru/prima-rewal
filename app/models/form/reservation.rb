@@ -4,6 +4,8 @@ class Form::Reservation
   attribute :full_name
   attribute :phone_number
   attribute :email
+  attribute :date_of_arrival, type: Date
+  attribute :date_of_departure, type: Date
   attribute :people, type: Integer
   attribute :notes
 

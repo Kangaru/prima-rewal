@@ -5,6 +5,8 @@ pl:
     email: Adres E-mail
     people: Liczba osób
     notes: Uwagi
+    date_of_arrival: Data przyjazdu
+    date_of_departure: Data wyjazdu
 
   activemodel:
     attributes:

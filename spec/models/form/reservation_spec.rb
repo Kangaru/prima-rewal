@@ -1,6 +1,10 @@
 require 'spec_helper'
+require 'active_attr/rspec'
 
 describe Form::Reservation do
+  it { should have_attribute(:date_of_arrival) }
+  it { should have_attribute(:date_of_departure) }
+
   it { should validate_presence_of(:full_name) }
   it { should ensure_length_of(:full_name).is_at_least(3) }
   it { should allow_value('John Doe').for(:full_name) }
