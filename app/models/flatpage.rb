@@ -40,7 +40,8 @@ private
     order("position #{order}")
   end
 
-  def self.update_position(id, pos)
-    where('id == ? AND position != ?', id, pos).limit(1).update_all position: pos
+  def self.update_position(id, position)
+    flatpage = where('id == ? AND position != ?', id, position).limit(1).first
+    flatpage.update_attributes(position: position) if flatpage
   end
 end

@@ -23,14 +23,27 @@ describe Flatpage do
       Flatpage.update_positions [4, 5, 6]
     end
 
-    it 'should create update sql query with proper informations' do
-      flatpage = mock_model(Flatpage)
+    context "#update_position" do
+      let(:flatpage) { mock_model(Flatpage) }
 
-      Flatpage.should_receive(:where).with('id == ? AND position != ?', 2, 1).and_return flatpage
-      flatpage.should_receive(:limit).with(1).and_return flatpage
-      flatpage.should_receive(:update_all).with({position: 1})
+      before do
+        Flatpage.should_receive(:where).with('id == ? AND position != ?', 2, 1).and_return flatpage
+        flatpage.should_receive(:limit).with(1).and_return flatpage
+      end
 
-      flatpage.class.send(:update_position, 2, 1)
+      after do
+        flatpage.class.send(:update_position, 2, 1)
+      end
+
+      it 'should update flatpage' do
+        flatpage.should_receive(:first).and_return flatpage
+        flatpage.should_receive(:update_attributes).with(position: 1)
+      end
+
+      it "should not update flatpage" do
+        flatpage.should_receive(:first).and_return nil
+        flatpage.should_not_receive(:update_attributes)
+      end
     end
   end
 
