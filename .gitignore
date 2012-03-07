@@ -31,4 +31,6 @@
 
 # Ignore coverage (simplecov) files
 /coverage/
+
 config/database.yml
+config/action_mailer.yml

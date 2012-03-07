@@ -1,0 +1,29 @@
+development:
+  default:
+    address: 'smtp.gmail.com'
+    port: 587
+    domain: 'gmail.com'
+    user_name: 'user'
+    password: 'passwd'
+    authentication: 'plain'
+    enable_starttls_auto: true
+
+production:
+  default:
+    address: 'smtp.gmail.com'
+    port: 587
+    domain: 'gmail.com'
+    user_name: 'user'
+    password: 'passwd'
+    authentication: 'plain'
+    enable_starttls_auto: true
+
+test:
+  default:
+    address: 'smtp.gmail.com'
+    port: 587
+    domain: 'gmail.com'
+    user_name: 'user'
+    password: 'passwd'
+    authentication: 'plain'
+    enable_starttls_auto: true
