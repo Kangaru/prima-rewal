@@ -1,7 +1,8 @@
 ActiveAdmin.register User, as: 'Account' do
+  menu label: I18n.t('admin.resources.account'), parent: I18n.t('admin.resources.user')
+
   actions :edit, :update
 
-  menu parent: 'Users'
 
   controller do
     def redirect_to_edit

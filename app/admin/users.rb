@@ -1,4 +1,6 @@
 ActiveAdmin.register User do
+  menu label: I18n.t('admin.resources.user')
+
   actions :index, :new, :create, :destroy
 
   filter :email
