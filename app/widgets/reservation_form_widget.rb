@@ -21,10 +21,10 @@ class ReservationFormWidget < Apotomo::Widget
   end
 
   def send_reservation(event)
-    @reservation = event[:reservation]
+    @reservation, response = event[:reservation], render
     ReservationMailer.book(@reservation).deliver
 
-    render text: "$('body').prepend('#{escape_js render}');"
+    render text: "$('body').prepend('#{escape_js response}');"
   end
 
 end
