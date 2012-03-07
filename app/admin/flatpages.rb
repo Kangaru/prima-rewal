@@ -5,6 +5,7 @@ ActiveAdmin.register Flatpage do
 
   controller do
     helper :locale
+    cache_sweeper :flatpage_sweeper
 
     def scoped_collection
       end_of_association_chain.tap do |chain|

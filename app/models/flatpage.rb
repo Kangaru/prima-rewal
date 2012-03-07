@@ -33,6 +33,10 @@ class Flatpage < ActiveRecord::Base
     [id, title.to_url].join '-'
   end
 
+  def self.expiration_code(path)
+    [I18n.locale, "#{path}"[1..-1].gsub(/^(I18n.available_locales * '|')/, '')]
+  end
+
 
 private
 
