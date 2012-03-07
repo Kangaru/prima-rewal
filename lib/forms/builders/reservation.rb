@@ -3,6 +3,7 @@ class Forms::Builders::Reservation < SimpleForm::FormBuilder
     options[:input_html] ||= {}
 
     options[:input_html][:class] = 'input-medium'
+    options[:input_html][:class] = 'span1' if options[:as] == :date
     options[:input_html][:rows]  = 3 if options[:as] == :text
 
 
