@@ -6,6 +6,8 @@
         = f.input :full_name
         = f.input :phone_number
         = f.input :email
+        = f.input :date_of_arrival, as: :date
+        = f.input :date_of_departure, as: :date
         = f.input :people, collection: 1..6, prompt: false
         = f.input :notes, as: :text
 

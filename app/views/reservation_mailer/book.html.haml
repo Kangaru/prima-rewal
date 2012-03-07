@@ -1,0 +1,9 @@
+%h1 Rezerwacja
+
+%p <b>Imię i nazwisko</b>: #{@reservation.full_name}
+%p <b>Numer telefonu</b>: #{@reservation.phone_number}
+%p <b>Adres e-mail</b>: #{@reservation.email}
+%p <b>Data przyjazdu</b>: #{l @reservation.date_of_arrival}
+%p <b>Data wyjazdu</b>: #{l @reservation.date_of_departure}
+%p <b>Liczba osób</b>: #{@reservation.people}
+%p <b>Uwagi</b>: #{@reservation.notes.presence || 'Brak'}
