@@ -1,0 +1,18 @@
+pl:
+  admin:
+    resources:
+      flatpage: Strony
+      user: Użytkownicy
+      account: Moje konto
+
+    flatpages:
+      action_item:
+        expire_gallery: Zresetuj cache galerii
+        expire_carousel: Zresetuj cache slidera
+
+
+      expire_gallery:
+        expired: Zresetowano cache galerii. Na stronie powinny pojawić się zmiany.
+
+      expire_carousel:
+        expired: Zresetowano cache slidera. Na stronie powinny pojawić się zmiany

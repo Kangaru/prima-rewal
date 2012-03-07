@@ -1,9 +1,9 @@
 en:
-  flatpage: &flatpage
-    title: Title
-    content: Content
-
-  activerecord:
-    attributes:
-      flatpage:
-        <<: *flatpage
+#  flatpage: &flatpage
+#    title: Title
+#    content: Content
+#
+#  activerecord:
+#    attributes:
+#      flatpage:
+#        <<: *flatpage

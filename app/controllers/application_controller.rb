@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   has_widgets do |root|
     root << widget(:reservation_form)
   end
+
+  def set_admin_locale
+    I18n.locale = I18n.default_locale
+  end
 end

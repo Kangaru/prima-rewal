@@ -1,0 +1,6 @@
+pl:
+  formtastic:
+    create: Utwórz
+    save: Zapisz
+    update: Zapisz
+    submit: Wyślij
