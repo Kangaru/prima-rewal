@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe FbGraph::PhotoPresenter do
-  let(:photo) { mock(Object, source: 'http://google.pl/logo.png') }
-  let(:presenter) { FbGraph::PhotoPresenter.new(photo, view) }
+describe PhotoPresenter do
+  let(:photo) { 'http://google.pl/logo.png' }
+  let(:presenter) { PhotoPresenter.new(photo, view) }
 
   it 'should return link to image' do
     photo = presenter.to_fbgallery_photo
