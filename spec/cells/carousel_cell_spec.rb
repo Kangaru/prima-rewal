@@ -5,10 +5,7 @@ describe CarouselCell do
     
     context "rendering display" do
       before do
-        album = [
-          mock(FbGraph::Photo, source: 'http://img1.pl', class: 'FbGraph::Photo'),
-          mock(FbGraph::Photo, source: 'http://img2.pl', class: 'FbGraph::Photo')
-        ]
+        album = ['http://img1.pl', 'http://img2.pl']
 
         FbAlbum.should_receive(:carousel).and_return album
       end

@@ -1,6 +1,6 @@
 class CarouselCell < Cell::Rails
 
-  cache :display, expires_in: 1.hour
+  cache :display
 
   def display
     @cover, *@photos = FbAlbum.carousel
