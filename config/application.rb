@@ -63,5 +63,8 @@ module PrimaRewal
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # ActionMailer SMTP settings
+    config.action_mailer.smtp_settings = YAML.load_file("#{Rails.root.join('config', 'action_mailer.yml')}")[Rails.env].try(:to_options)
   end
 end
