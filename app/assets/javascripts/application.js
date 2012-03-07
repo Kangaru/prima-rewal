@@ -6,3 +6,4 @@
 //= require bootstrap_overrides
 //
 //= require application/cells
+//= require application/widgets
