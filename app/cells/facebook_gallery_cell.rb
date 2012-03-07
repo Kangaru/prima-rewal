@@ -1,7 +1,7 @@
 class FacebookGalleryCell < Cell::Rails
   include ActionPresenter::ViewHelper
 
-  cache :display, expires_in: 1.hour
+  cache :display
 
   def display
     @cover, *@photos = FbAlbum.gallery

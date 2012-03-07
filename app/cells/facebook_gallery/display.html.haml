@@ -1,5 +1,5 @@
 #fbgallery
   %ul.thumbnails
-    %li.span6= present(@cover) {|p| p.to_fbgallery_photo }
+    %li.span6= present(@cover, PhotoPresenter) {|p| p.to_fbgallery_photo }
     - @photos.each do |photo|
-      %li.span2= present(photo) {|p| p.to_fbgallery_photo }
+      %li.span2= present(photo, PhotoPresenter) {|p| p.to_fbgallery_photo }
