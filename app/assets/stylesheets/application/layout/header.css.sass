@@ -20,14 +20,24 @@
 
 
 .language-choose
-  @include header-box-background
-  @include rounded-corners(0, 0, 3px, 3px)
-  @include header-box-shadow
+  @include header-box
 
-  height: 26px
   width: 80px
-  padding: 5px 10px
   margin-left: 590px
+
+.fb-like-box
+  @include header-box
+  width: 100px
+  float: left
+  margin-left: 450px
+
+  .fb-like
+    margin-top: 3px
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+  .fb-like-box
+    width: 120px
+    margin-left: 430px
 
 
 .menu-list
