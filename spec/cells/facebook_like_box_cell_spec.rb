@@ -1,22 +1,21 @@
 require 'spec_helper'
 
 describe FacebookLikeBoxCell do
-  context "cell rendering" do 
-    
+  context "cell rendering" do
+
     context "rendering display" do
       subject { render_cell(:facebook_like_box, :display) }
 
-      it { should have_selector 'div.box-shadowed #fb-root' }
-      it { should have_selector 'div.box-shadowed .box-inner .fb-like-box' }
-      it { should have_selector 'div.fb-like-box[data-href="http://facebook.com/primarewal"]' }
+      it { should have_selector '.fb-like-box  #fb-root' }
+      it { should have_selector '.fb-like[data-href="http://facebook.com/primarewal"]' }
     end
-    
+
   end
 
 
-  context "cell instance" do 
-    subject { cell(:facebook_like_box) } 
-    
+  context "cell instance" do
+    subject { cell(:facebook_like_box) }
+
     it { should respond_to(:display) }
   end
 end

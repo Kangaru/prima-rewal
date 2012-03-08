@@ -28,6 +28,7 @@
       <div class="container">
         <%= link_to 'Prima Rewal', main_page_path, class: :brand %>
         <div class="right-side">
+          <%= render_cell :facebook_like_box, :display %>
           <%= render_cell :language_choose, :display %>
           <%= render_cell :menu, :display %>
         </div>
@@ -40,7 +41,6 @@
       <div class="col220">
         <%= render_cell :contact, :display %>
         <%= render_widget :reservation_form, :display %>
-        <%= render_cell :facebook_like_box, :display %>
       </div>
     </div>
 
