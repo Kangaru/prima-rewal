@@ -58,5 +58,13 @@
 @mixin header-box-shadow
   @include box-shadow(0px, 2px, 0px, 0px, rgba(0, 0, 0, 0.3))
 
+@mixin header-box
+  @include header-box-background
+  @include rounded-corners(0, 0, 3px, 3px)
+  @include header-box-shadow
+
+  height: 26px
+  padding: 5px 10px
+
 @mixin content-box-shadow
   @include box-shadow(0px, 2px, 1px, 1px, rgba(0, 0, 0, 0.07))
