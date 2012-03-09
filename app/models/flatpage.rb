@@ -37,7 +37,7 @@ class Flatpage < ActiveRecord::Base
   class << self
     def update_positions(ids)
       ids.each_with_index do |id, index|
-        update_position id.to_i, index.to_i + 1
+        update_position id, index.to_i + 1
       end
     end
 
@@ -45,7 +45,7 @@ class Flatpage < ActiveRecord::Base
   private
 
     def update_position(id, position)
-      flatpage = where('id == ? AND position != ?', id, position).limit(1).first
+      flatpage = where(id: id).where('position != ?', position).limit(1).first
       flatpage.update_attributes(position: position) if flatpage
     end
   end

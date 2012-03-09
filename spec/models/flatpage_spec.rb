@@ -27,7 +27,8 @@ describe Flatpage do
       let(:flatpage) { mock_model(Flatpage) }
 
       before do
-        Flatpage.should_receive(:where).with('id == ? AND position != ?', 2, 1).and_return flatpage
+        Flatpage.should_receive(:where).with(id: 2).and_return flatpage
+        flatpage.should_receive(:where).with('position != ?', 1).and_return flatpage
         flatpage.should_receive(:limit).with(1).and_return flatpage
       end
 
