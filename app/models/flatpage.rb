@@ -37,7 +37,7 @@ class Flatpage < ActiveRecord::Base
   class << self
     def update_positions(ids)
       ids.each_with_index do |id, index|
-        update_position id, index.to_i + 1
+        update_position id.to_i, index.to_i + 1
       end
     end
 
