@@ -6,12 +6,11 @@
 
 
 .brand
-  display: block
+  @include link-as-image('layout/logo.png')
+
   float: left
   width: 150px
   height: 150px
-  background: url('layout/logo.png') center center no-repeat
-  text-indent: -9000px
 
 
 .right-side
@@ -25,11 +24,23 @@
   width: 80px
   margin-left: 590px
 
+.kite-prima
+  @include header-box
+  width: 80px
+  float: left
+  margin-left: 0px
+  text-align: center
+
+  a
+    @include link-as-image('layout/kite-prima.png')
+    height: 26px
+
+
 .fb-like-box
   @include header-box
   width: 100px
   float: left
-  margin-left: 450px
+  margin-left: 350px
 
   .fb-like
     margin-top: 3px
@@ -37,7 +48,7 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px)
   .fb-like-box
     width: 120px
-    margin-left: 430px
+    margin-left: 400px
 
 
 .menu-list

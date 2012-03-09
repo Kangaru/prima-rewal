@@ -68,3 +68,8 @@
 
 @mixin content-box-shadow
   @include box-shadow(0px, 2px, 1px, 1px, rgba(0, 0, 0, 0.07))
+
+@mixin link-as-image($image)
+  text-indent: -9999px
+  display: block
+  background: url($image) center center no-repeat
