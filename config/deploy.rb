@@ -18,7 +18,7 @@ role :db,  'prima.megiteam.pl', primary: true # This is where Rails migrations w
 
 set :use_sudo, false
 
-#after 'deploy:update_code',     'deploy:assets_precompile'
+after 'deploy:update_code',     'deploy:assets_precompile'
 
 after 'deploy:setup',           'deploy:db:setup'
 after 'deploy:setup',           'deploy:mailer:setup'
