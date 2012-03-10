@@ -3,6 +3,6 @@ class ReservationMailer < ActionMailer::Base
 
   def book(reservation)
     @reservation = reservation
-    mail to: "zlw.zalewski@gmail.com", reply_to: @reservation.email, subject: "Rezerwacja (#{@reservation.full_name})"
+    mail to: "prima@prima-rewal.pl", reply_to: @reservation.email, subject: "Rezerwacja (#{@reservation.full_name})"
   end
 end
