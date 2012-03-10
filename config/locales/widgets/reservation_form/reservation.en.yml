@@ -3,7 +3,7 @@ en:
     header: Booking
     modal:
       title: Thank you for the reservation!
-      content: '<h3>Reservation in name of: %{full_name}.</h3><p>Please, remember that it is <b>initial</b> reservation.<br/>Please call or email us within few days to confirm it.</p>'
+      content: '<h3>Reservation in name of: %{full_name}.</h3><p>Please, remember that it is <b>initial</b> reservation.<br/>We will contact you within few days to confirm it.</p>'
       close: 'Close'
 
   helpers:
