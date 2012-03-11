@@ -1,6 +1,6 @@
 de:
   reservation:
-    header: Reservierung
+    header: Einleitende Reservierung
     modal:
       title: Vielen Dank für Ihre Reservierung!
       content: '<h3>Reserviert für: %{full_name}.</h3><p>Bitte, vergessen Sie nicht, dass es nur eine <b>einleitende</b> Reservierung ist.<br/>Wir werden nach ein paar Tage Sie anrufen und bestätigen es.</p>'
