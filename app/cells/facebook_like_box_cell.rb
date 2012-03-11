@@ -7,8 +7,8 @@ class FacebookLikeBoxCell < Cell::Rails
   def display
     @options = {
       href: 'http://facebook.com/PrimaRewal',
-      width: 100, height: 64,
-      send: false, layout: :box_count, 'show-faces' => false,
+      width: 50, height: 20,
+      send: false, layout: :button_count, 'show-faces' => false,
     }
 
     render

@@ -9,7 +9,7 @@ describe FacebookLikeBoxCell do
       it { should have_selector '#fb-like-box #fb-root' }
       it { should have_selector '#fb-like-box a[href="http://facebook.com/PrimaRewal"]'}
       it { should have_selector '#fb-like-box .fb-like[data-href="http://facebook.com/PrimaRewal"]' }
-      it { should have_selector '#fb-like-box .fb-like[data-layout="box_count"]' }
+      it { should have_selector '#fb-like-box .fb-like[data-layout="button_count"]' }
     end
 
   end

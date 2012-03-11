@@ -1,4 +1,7 @@
 #fb-like-box
+  %p
+    = image_tag 'layout/facebook.png'
+    = link_to 'Prima na Facebooku', 'http://facebook.com/PrimaRewal', target: :_blank
+
   #fb-root
-  = link_to 'Prima na Facebooku', 'http://facebook.com/PrimaRewal', target: :_blank
   = content_tag :div, '', class: 'fb-like', data: @options
