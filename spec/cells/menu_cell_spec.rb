@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe MenuCell do
-  context "cell rendering" do 
-    
+  context "cell rendering" do
+
     context "rendering display" do
       it 'should render menu link to root path' do
         Flatpage.should_receive(:for_menu).and_return [mock_model(Flatpage, title: 'Lorem ipsum')]
 
         cell = render_cell :menu, :display
 
-        cell.should have_selector 'ul.menu-list li a[href="/"]'
+        cell.should have_selector 'ul.menu-list li a[href="http://test.host/"]'
       end
 
       it 'should render menu link to few flatpages' do
@@ -18,18 +18,18 @@ describe MenuCell do
 
         cell = render_cell :menu, :display
 
-        cell.should have_selector 'a[href="/"]'
-        cell.should have_selector "a[href='#{flatpage_path(flatpages.last)}']", text: 'Ipsum'
+        cell.should have_selector 'a[href="http://test.host/"]'
+        cell.should have_selector "a[href='#{flatpage_url(flatpages.last)}']", text: 'Ipsum'
       end
     end
-    
+
   end
 
 
-  context "cell instance" do 
-    subject { cell(:menu) } 
-    
+  context "cell instance" do
+    subject { cell(:menu) }
+
     it { should respond_to(:display) }
-    
+
   end
 end

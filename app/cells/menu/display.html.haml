@@ -1,4 +1,4 @@
 %ul.menu-list
   = menu_link @main_page, main_page_path
   - @flatpages.each_with_index do |flatpage|
-    = menu_link flatpage, flatpage_path(flatpage)
+    = menu_link flatpage, flatpage_url(flatpage), title: "Apartamenty Rewal - #{flatpage.title}"
