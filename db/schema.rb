@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120223124953) do
+ActiveRecord::Schema.define(:version => 20120405225010) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -33,8 +33,11 @@ ActiveRecord::Schema.define(:version => 20120223124953) do
     t.string   "locale"
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
   end
 
   add_index "flatpage_translations", ["flatpage_id"], :name => "index_flatpage_translations_on_flatpage_id"
