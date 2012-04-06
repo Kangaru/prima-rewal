@@ -1,2 +1,6 @@
+- content_for :meta_title,       @flatpage.meta_title
+- content_for :meta_description, @flatpage.meta_description
+- content_for :meta_keywords,    @flatpage.meta_keywords
+
 - present @flatpage do |flatpage|
   = flatpage.content
