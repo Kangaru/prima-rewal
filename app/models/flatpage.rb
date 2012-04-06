@@ -1,7 +1,7 @@
 class Flatpage < ActiveRecord::Base
   acts_as_list
 
-  translates :title, :content
+  translates :title, :content, :meta_title, :meta_description, :meta_keywords
   globalize_accessors
   accepts_nested_attributes_for :translations
 
