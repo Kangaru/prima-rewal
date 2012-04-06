@@ -4,6 +4,10 @@ pl:
       flatpage:
         title: Tytuł
         content: Treść
+
+        meta_title: Tytuł strony
+        meta_description: Opis
+        meta_keywords: Słowa kluczowe
     hints:
       flatpage:
         title: 'Dla tytułu "Witaj świecie!" adres będzie wygladał - "witaj-swiecie"'

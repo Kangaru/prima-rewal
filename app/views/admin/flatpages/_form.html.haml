@@ -13,6 +13,11 @@
             = tf.input :content, as: :text
             = tf.input :locale, as: :hidden
 
+          = tf.inputs "SEO (#{tf.object.locale})" do
+            = tf.input :meta_title
+            = tf.input :meta_description
+            = tf.input :meta_keywords
+
     = f.actions
 
 :javascript

@@ -38,6 +38,10 @@ describe 'Admin::Flatpages' do
         within "div#lang-#{locale}" do
           fill_in "Title", with: flatpage.title
           fill_in "Content", with: flatpage.content
+
+          fill_in 'Meta title', with: flatpage.meta_title
+          fill_in 'Meta description', with: flatpage.meta_description
+          fill_in 'Meta keywords', with: flatpage.meta_keywords
         end
       end
 
