@@ -7,9 +7,6 @@ describe Form::Reservation do
 
   it { should validate_presence_of(:full_name) }
   it { should ensure_length_of(:full_name).is_at_least(3) }
-  it { should allow_value('John Doe').for(:full_name) }
-  it { should_not allow_value('John').for(:full_name) }
-  it { should_not allow_value('Doe').for(:full_name) }
 
   it { should validate_presence_of(:phone_number) }
   it { should ensure_length_of(:phone_number).is_at_most(20) }
