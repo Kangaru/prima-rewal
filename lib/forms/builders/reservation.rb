@@ -3,7 +3,14 @@ class Forms::Builders::Reservation < SimpleForm::FormBuilder
     options[:input_html] ||= {}
 
     options[:input_html][:class] = 'input-medium'
-    options[:input_html][:class] = 'span1' if options[:as] == :date
+
+    if options[:as] == :date
+      options[:input_html][:class] = 'span1'
+
+      options[:start_year] = Date.today.year
+      options[:end_year]   = Date.today.year + 2
+    end
+
     options[:input_html][:rows]  = 3 if options[:as] == :text
 
 

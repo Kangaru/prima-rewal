@@ -29,6 +29,19 @@ describe Forms::ReservationHelper do
         f.input(:title, as: :text).should have_selector 'label.optional'
       end
     end
+
+    it 'should set proper years in select list' do
+      helper.reservation_form :reservation do |f|
+        date = f.input :date, as: :date
+
+        date.should have_selector 'select#reservation_date_1i option', count: 3
+
+        year = Date.today.year
+        [year, year + 1, year + 2].each do |year|
+          date.should have_selector "select#reservation_date_1i option[value='#{year}']"
+        end
+      end
+    end
   end
 
   context "#button" do
