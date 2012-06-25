@@ -46,7 +46,7 @@ class Flatpage < ActiveRecord::Base
 
     def update_position(id, position)
       flatpage = where(id: id).where('position != ?', position).limit(1).first
-      flatpage.update_attributes(position: position) if flatpage
+      flatpage.try(:update_attributes, position: position)
     end
   end
 
