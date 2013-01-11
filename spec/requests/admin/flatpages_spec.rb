@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe 'Admin::Flatpages' do
-  let(:user) { Factory :user }
+  let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
 
   context '#index & #show' do
-    let!(:flatpage) { Factory :flatpage }
+    let!(:flatpage) { FactoryGirl.create(:flatpage)  }
 
     it 'should render #index action and table with flatpages' do
       visit admin_flatpages_path
@@ -57,7 +57,7 @@ describe 'Admin::Flatpages' do
   end
 
   context '#edit & #update' do
-    let(:flatpage) { Factory :flatpage }
+    let(:flatpage) { FactoryGirl.create(:flatpage) }
     before { visit edit_admin_flatpage_path flatpage }
 
     it 'should update flatpage' do

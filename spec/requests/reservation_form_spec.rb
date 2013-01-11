@@ -4,7 +4,7 @@ describe 'ReservationForm::Widget' do
   before do
     ActionMailer::Base.deliveries = []
 
-    Factory :flatpage
+    FactoryGirl.create(:flatpage)
     visit root_path
   end
 

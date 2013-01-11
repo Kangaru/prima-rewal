@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Admin::AccountsController do
-  let(:user) { Factory :user }
+  let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
 
   context '#index & #show' do

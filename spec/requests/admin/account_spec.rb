@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Admin::AcccountsController' do
-  let(:user) { Factory :user }
+  let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
 
   it 'should edit users account and force user to sign in with new credentials' do

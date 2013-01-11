@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Admin::UsersController' do
-  let(:user) { Factory :user }
+  let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
 
   context "#index" do
@@ -37,7 +37,7 @@ describe 'Admin::UsersController' do
 
   context '#destroy' do
     it 'should destroy user' do
-      user_to_delete = Factory :user
+      user_to_delete = FactoryGirl.create(:user)
 
       visit admin_users_path
 

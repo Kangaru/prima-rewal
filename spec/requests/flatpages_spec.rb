@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'FlatpagesController' do
   context "#index" do
-    let!(:flatpage) { Factory :flatpage }
+    let!(:flatpage) { FactoryGirl.create(:flatpage) }
     before { visit root_path }
 
     it 'should show flatpage' do
@@ -14,7 +14,7 @@ describe 'FlatpagesController' do
   end
 
   context "#show" do
-    let!(:flatpage) { Factory :flatpage }
+    let!(:flatpage) { FactoryGirl.create(:flatpage) }
     before { visit flatpage_path flatpage }
 
     it "should show flatpage" do
