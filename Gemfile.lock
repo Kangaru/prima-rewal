@@ -196,7 +196,7 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
-    rack (1.4.3)
+    rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
     rack-oauth2 (0.14.4)
@@ -281,7 +281,7 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
     stringex (1.4.0)
-    thin (1.4.1)
+    thin (1.2.7)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
@@ -344,5 +344,5 @@ DEPENDENCIES
   spork (~> 1.0.0rc2)
   sqlite3
   stringex
-  thin (= 1.4.1)
+  thin (= 1.2.7)
   uglifier (>= 1.2.3)
