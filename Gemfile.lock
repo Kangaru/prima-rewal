@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/cgriego/active_attr.git
   revision: 76bc62885a9da48db31b234eb6423d367fd411c9
+  ref: 76bc62885
   specs:
     active_attr (0.6.0.alpha1)
       activemodel (>= 3.0.2, < 4.1)
@@ -9,6 +10,7 @@ GIT
 GIT
   remote: git://github.com/svenfuchs/globalize3.git
   revision: 36430511bd08ac0f6a7182c7e73b297766f991ac
+  ref: 36430511
   specs:
     globalize3 (0.2.0)
       activemodel (>= 3.0.0)
@@ -18,6 +20,7 @@ GIT
 GIT
   remote: git://github.com/sverigemeny/fancybox-rails.git
   revision: 17db886581f38fbcd4b0ac0349fc9493554ee261
+  ref: 17db8865
   specs:
     fancybox-rails (0.1.4)
       railties (>= 3.1.0)
@@ -107,6 +110,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    daemons (1.1.9)
     database_cleaner (0.8.0)
     devise (2.1.0)
       bcrypt-ruby (~> 3.0)
@@ -117,6 +121,7 @@ GEM
     easy_globalize3_accessors (1.2.0)
       globalize3 (~> 0.2.0.beta1)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (3.3.0)
@@ -179,7 +184,7 @@ GEM
     nokogiri (1.5.3)
     onfire (0.2.0)
     orm_adapter (0.0.7)
-    paper_trail (2.6.3)
+    paper_trail (2.7.2)
       activerecord (~> 3.0)
       railties (~> 3.0)
     param_protected (4.0.0)
@@ -276,6 +281,10 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
     stringex (1.4.0)
+    thin (1.4.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.12)
@@ -333,4 +342,5 @@ DEPENDENCIES
   spork (~> 1.0.0rc2)
   sqlite3
   stringex
+  thin (= 1.4.1)
   uglifier (>= 1.2.3)

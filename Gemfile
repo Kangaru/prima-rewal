@@ -12,6 +12,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'thin', '1.4.1'
 end
 
 # Authorization
@@ -25,13 +26,13 @@ gem "meta_search", "~> 1.1.3"
 gem 'haml'
 gem 'param_protected'
 gem 'polish'
-gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git'
+gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git', ref: '36430511'
 gem 'easy_globalize3_accessors'
 gem 'acts_as_list'
 gem 'simple_form'
 gem 'redcarpet'
 gem 'i18n_routing'
-gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git'
+gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git', ref: '76bc62885'
 gem 'fb_graph'
 gem 'stringex'
 
@@ -58,7 +59,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'fancybox-rails', git: 'git://github.com/sverigemeny/fancybox-rails.git'
+gem 'fancybox-rails', git: 'git://github.com/sverigemeny/fancybox-rails.git', ref: '17db8865'
 
 group :development, :test do
   gem 'rspec-rails'
