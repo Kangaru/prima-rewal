@@ -12,6 +12,8 @@ end
 
 group :production do
   gem 'pg'
+
+  gem 'daemons', '1.0.10' # for Thin
   gem 'thin', '1.4.1'
 end
 
