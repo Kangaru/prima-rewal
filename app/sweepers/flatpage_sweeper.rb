@@ -23,5 +23,8 @@ private
   #   - etc. ...
   def clear_menu_cell_cache
     Rails.cache.delete_matched /cells\/menu\/display\S+/
+  rescue => e
+    puts e.backtrace
+    raise 'test'
   end
 end
