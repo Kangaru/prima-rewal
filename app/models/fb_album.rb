@@ -1,4 +1,6 @@
 class FbAlbum
+  APP_TOKEN = '133818496681616|BZ2zoia8woM6wfYvtMz91_DI2iU'.freeze
+  
   @albums = {
     gallery:  177381578961541,
     carousel: 175604345805931
@@ -22,10 +24,16 @@ private
   #
   # @return [Array]
   def self.fetch_photos(album, id)
-    photos = lambda { FbGraph::Album.fetch(id).photos.map(&:source) }
+    photos = lambda { fetch_photo_urls }
     return photos.call unless ActionController::Base.perform_caching
 
     Rails.cache.fetch(cache_name album) { photos.call }
+  end
+  
+  def self.fetch_photo_urls(id)
+    FbGraph2::Album.new(id).authenticate(APP_TOKEN).photos.map do |photo|
+      photo.images.first.source
+    end
   end
 
   def self.cache_name(album)

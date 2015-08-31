@@ -30,14 +30,14 @@ gem "meta_search", "~> 1.1.3"
 gem 'haml'
 gem 'param_protected'
 gem 'polish'
-gem 'globalize3', git: 'git://github.com/svenfuchs/globalize3.git', ref: '36430511'
+gem 'globalize', github: 'globalize', branch: '3-0-stable'
 gem 'easy_globalize3_accessors'
 gem 'acts_as_list'
 gem 'simple_form'
 gem 'redcarpet'
 gem 'i18n_routing'
 gem 'active_attr', git: 'git://github.com/cgriego/active_attr.git', ref: '76bc62885'
-gem 'fb_graph'
+gem 'fb_graph2'
 gem 'stringex'
 
 # Widgets/Cells
@@ -71,7 +71,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', require: false
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'launchy'
   gem 'spork', '~> 1.0.0rc2'
   gem 'simplecov', require: false
