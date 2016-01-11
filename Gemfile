@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'rack',  '1.4.3'
+
+# gem 'rack',  '1.4.3'
+gem 'json', '1.8.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -14,9 +16,9 @@ end
 group :production do
   gem 'pg'
 
-  gem 'eventmachine', '0.12.8' # for Thin
-  gem 'daemons',      '1.0.10' # for Thin
-  gem 'thin', '1.2.7'
+  # gem 'eventmachine', '0.12.8' # for Thin
+  # gem 'daemons',      '1.0.10' # for Thin
+  # gem 'thin', '1.2.7'
 end
 
 # Authorization
@@ -30,7 +32,7 @@ gem "meta_search", "~> 1.1.3"
 gem 'haml'
 gem 'param_protected'
 gem 'polish'
-gem 'globalize', github: 'globalize', branch: '3-0-stable'
+gem 'globalize', '~> 3.1.0'
 gem 'easy_globalize3_accessors'
 gem 'acts_as_list'
 gem 'simple_form'
@@ -87,7 +89,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn', '4.8.3'
 
 # Deploy with Capistrano
 gem 'capistrano'
