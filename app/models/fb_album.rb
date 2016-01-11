@@ -24,10 +24,10 @@ private
   #
   # @return [Array]
   def self.fetch_photos(album, id)
-    photos = lambda { fetch_photo_urls }
+    photos = lambda { fetch_photo_urls(id) }
     return photos.call unless ActionController::Base.perform_caching
 
-    Rails.cache.fetch(cache_name album) { photos.call }
+    Rails.cache.fetch(cache_name(album)) { photos.call }
   end
   
   def self.fetch_photo_urls(id)
