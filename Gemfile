@@ -14,7 +14,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.15.0'
 
   # gem 'eventmachine', '0.12.8' # for Thin
   # gem 'daemons',      '1.0.10' # for Thin
